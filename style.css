@@ -1,0 +1,237 @@
+﻿:root {
+    --bg: #e8f4ff;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #4b5563;
+    --input-bg: #f8fbff;
+    --result-bg: #f8fbff;
+    --accent: #3b82f6;
+    --accent-strong: #2563eb;
+    --border: rgba(59, 130, 246, 0.2);
+    --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+body[data-theme="dark"] {
+    --bg: #111827;
+    --card: #1f2937;
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --input-bg: #152238;
+    --result-bg: #172a42;
+    --accent: #60a5fa;
+    --accent-strong: #2563eb;
+    --border: rgba(96, 165, 250, 0.18);
+    --shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: Inter, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0) 35%);
+    opacity: 1;
+    transition: background-image 0.35s ease, opacity 0.35s ease;
+}
+
+body[data-theme="dark"] {
+    background-color: #111827;
+}
+
+body[data-theme="dark"]::before {
+    background-image: none;
+    opacity: 0;
+}
+
+body,
+.bmi-card,
+input[type="number"],
+.icon-button,
+button:not(.icon-button),
+.bmi-result,
+label,
+.bmi-card p {
+    transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.container {
+    width: min(480px, 100%);
+}
+
+.page-controls {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.65rem;
+    z-index: 10;
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: var(--card);
+    color: var(--text);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.icon-button:hover {
+    transform: translateY(-1px);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.bmi-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 2.5rem 2.4rem 2.5rem;
+}
+
+.bmi-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bmi-card h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    letter-spacing: -0.04em;
+}
+
+.bmi-card__controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.toggle-button {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 16px;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-button:hover {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.bmi-card p {
+    margin: 0.75rem 0 1.8rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.bmi-form {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.bmi-form > *:last-child {
+    margin-top: 0.5rem;
+}
+
+label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    color: var(--muted);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 16px;
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.35s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+button:not(.icon-button) {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:not(.icon-button):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(59, 130, 246, 0.2);
+}
+
+button:not(.icon-button):active {
+    transform: translateY(0);
+}
+
+.bmi-result {
+    margin-top: 1.75rem;
+    padding: 1.3rem 1.4rem;
+    border-radius: 20px;
+    background: var(--result-bg);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.bmi-result:empty {
+    display: none;
+}
+
+@media (max-width: 420px) {
+    body {
+        padding: 1rem;
+    }
+
+    .bmi-card {
+        padding: 1.6rem;
+    }
+}
