@@ -1,19 +1,19 @@
-# 🧮 BMI Calculator
+# BMI Calculator
 
 Simple and clean Body Mass Index (BMI) calculator with theme and language support.
 
 ---
 
-## 🌐 Features
+## Features
 
-- 🌙 Dark / Light theme
-- 🌍 English / Russian language switch
-- 📱 Fully responsive design
-- ⚡ Instant BMI calculation
+- Dark / Light theme
+- English / Russian language switch
+- Fully responsive design
+- Instant BMI calculation
 
 ---
 
-## 🛠️ Built with
+## Built with
 
 - HTML
 - CSS
@@ -21,14 +21,14 @@ Simple and clean Body Mass Index (BMI) calculator with theme and language suppor
 
 ---
 
-## 📸 Preview
+## Preview
 
 ![Light mode](assets/screenshots/light.png)
 ![Dark mode](assets/screenshots/dark.png)
 
 ---
 
-## 📌 About
+## About
 
 This is my first published web project.
 Built as part of learning frontend development and Git/GitHub workflow.
