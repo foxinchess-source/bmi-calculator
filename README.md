@@ -13,12 +13,6 @@ Simple and clean Body Mass Index (BMI) calculator with theme and language suppor
 
 ---
 
-## 🖥️ Demo
-
-👉 https://mxory.github.io/bmi-calculator/
-
----
-
 ## 🛠️ Built with
 
 - HTML
