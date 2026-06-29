@@ -25,10 +25,3 @@ Simple and clean Body Mass Index (BMI) calculator with theme and language suppor
 
 ![Light mode](assets/screenshots/light.png)
 ![Dark mode](assets/screenshots/dark.png)
-
----
-
-## About
-
-This is my first published web project.
-Built as part of learning frontend development and Git/GitHub workflow.
